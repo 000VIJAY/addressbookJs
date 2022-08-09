@@ -150,9 +150,23 @@ function FindAndEditContact() {
 
             }
         });
-    } catch (e) {
-        console.error(e);
+    } catch (ex) 
+    {
+        console.error(ex);
     }
 }
 FindAndEditContact();
+DisplayContact();
+function removeContact() {
+    try {
+        let name = "Yadav"
+        const index = contactArray.findIndex((contact) => contact.firstName == name);
+        if (index != -1)
+        contactArray.splice(index, 1);
+    } catch (ex)
+    {
+        console.error(ex);
+    }
+}
+removeContact();
 DisplayContact();
