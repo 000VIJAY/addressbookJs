@@ -150,8 +150,7 @@ function FindAndEditContact() {
 
             }
         });
-    } catch (ex) 
-    {
+    } catch (ex) {
         console.error(ex);
     }
 }
@@ -162,35 +161,60 @@ function removeContact() {
         let name = "Yadav"
         const index = contactArray.findIndex((contact) => contact.firstName == name);
         if (index != -1)
-        contactArray.splice(index, 1);
-    } catch (ex)
-    {
+            contactArray.splice(index, 1);
+    } catch (ex) {
         console.error(ex);
     }
 }
 //removeContact();
 DisplayContact();
-function findNumberOfContact(){
-    let num = contactArray.reduce((contact)=>contact+1,0);
-    console.log("Number of contact in address Book: "+num)
+function findNumberOfContact() {
+    let num = contactArray.reduce((contact) => contact + 1, 0);
+    console.log("Number of contact in address Book: " + num)
 }
 findNumberOfContact();
-function findContactByCityOrStateName(){
+function findContactByCityOrStateName() {
     let pcityOrState = "Bihar";
-    let find = contactArray.filter((contact)=>contact.city==pcityOrState || contact.state==pcityOrState).map(contact=>contact.toString());
+    let find = contactArray.filter((contact) => contact.city == pcityOrState || contact.state == pcityOrState).map(contact => contact.toString());
     console.log(find)
 }
 findContactByCityOrStateName()
-function countOfContactsByCityOrState()
-{
+function countOfContactsByCityOrState() {
     let pcityOrState = "Bihar";
-    let count = contactArray.filter((contact)=>contact.city==pcityOrState || contact.state==pcityOrState).reduce((contact)=>contact+1,0)
+    let count = contactArray.filter((contact) => contact.city == pcityOrState || contact.state == pcityOrState).reduce((contact) => contact + 1, 0)
     console.log(count)
 }
 countOfContactsByCityOrState();
-function sortAlphabatically()
-{
-    let sorti=contactArray.sort((x, y) => x.firstName > y.firstName ? 1 : -1).map((contact)=>contact.toString());
-        console.log(sorti)
+function sortAlphabatically() {
+    let sorti = contactArray.sort((x, y) => x.firstName > y.firstName ? 1 : -1).map((contact) => contact.toString());
+    console.log(sorti)
 }
 sortAlphabatically()
+function sortByStateOrCityorZip() {
+    try {
+        console.log("\n1: City \n2: State \n3: zip")
+        let choice = 3;
+        switch (choice) 
+        {
+            case 1:
+                let sorti = contactArray.sort((x, y) => x.city > y.city ? 1 : -1).map((contact) => contact.toString());
+                console.log(sorti)
+                break;
+            case 2:
+                let sortbyState = contactArray.sort((x, y) => x.state > y.state ? 1 : -1).map((contact) => contact.toString());
+                console.log(sortbyState)
+                break;
+            case 3:
+                let sortbyzip = contactArray.sort((x, y) => x.zip > y.zip ? 1 : -1).map((contact) => contact.toString());
+                console.log(sortbyzip)        
+                break;
+            default:
+            console.log("Invalid input")
+            break;    
+        }
+    }
+    catch(ex) {
+        console.error(ex);
+    }
+}
+sortByStateOrCityorZip()
