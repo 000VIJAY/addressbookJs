@@ -94,3 +94,65 @@ function DisplayContact() {
     }
 }
 DisplayContact();
+function FindAndEditContact() {
+    try {
+        let name = "Vijay";
+        contactArray.forEach((contat) => {
+            if (contat._firstName == name) {
+                console.log(contat.toString());
+                console.log("\n1: First Name \n2: Last Name \n3: Address \n4: City \n5: State \n6: Zipcode \n7: Phone Number \n8: Email Address")
+                let choice = 1;
+                switch (choice) {
+                    case 1:
+                        let newFirstName = "Yadav"
+                        contat._firstName = newFirstName;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 2:
+                        let newLastName = "Ravi"
+                        contat._lastName = newLastName;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 3:
+                        let newAddress = "Banur"
+                        contat._address = newAddress;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 4:
+                        let newCity = "Chandigarh"
+                        contat._city = newCity;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 5:
+                        let newState = "Punjab"
+                        contat._state = newState;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 6:
+                        let newZip = 140601
+                        contat._zip = newZip;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 7:
+                        let newPhoneNum = 9966775544;
+                        contat._phoneNumber = newPhoneNum;
+                        console.log("Edit sucessfull")
+                        break;
+                    case 8:
+                        let newEmailId = "yadav@gmail.com";
+                        contat._email = newEmailId;
+                        console.log("Edit sucessfull")
+                        break;
+                    default:
+                        console.log("\n> Invalid Option!!");
+                        break;
+                }
+
+            }
+        });
+    } catch (e) {
+        console.error(e);
+    }
+}
+FindAndEditContact();
+DisplayContact();
