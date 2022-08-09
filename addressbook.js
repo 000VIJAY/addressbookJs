@@ -170,3 +170,8 @@ function removeContact() {
 }
 removeContact();
 DisplayContact();
+function findNumberOfContact(){
+    let num = contactArray.reduce((contact)=>contact+1,0);
+    console.log("Number of contact in address Book: "+num)
+}
+findNumberOfContact();
