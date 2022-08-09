@@ -168,10 +168,22 @@ function removeContact() {
         console.error(ex);
     }
 }
-removeContact();
+//removeContact();
 DisplayContact();
 function findNumberOfContact(){
     let num = contactArray.reduce((contact)=>contact+1,0);
     console.log("Number of contact in address Book: "+num)
 }
 findNumberOfContact();
+function findContactByCityName(){
+    let pcity = "Nalanda";
+    let find = contactArray.filter((contact)=>contact.city==pcity).map(contact=>contact.toString());
+    console.log(find)
+}
+findContactByCityName()
+function findContactByStateName(){
+    let pstate = "Bihar";
+    let find = contactArray.filter((contact)=>contact.state==pstate).map(contact=>contact.toString());
+    console.log(find)
+}
+findContactByStateName()
