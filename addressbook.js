@@ -188,3 +188,9 @@ function countOfContactsByCityOrState()
     console.log(count)
 }
 countOfContactsByCityOrState();
+function sortAlphabatically()
+{
+    let sorti=contactArray.sort((x, y) => x.firstName > y.firstName ? 1 : -1).map((contact)=>contact.toString());
+        console.log(sorti)
+}
+sortAlphabatically()
