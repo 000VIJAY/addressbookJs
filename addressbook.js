@@ -175,15 +175,16 @@ function findNumberOfContact(){
     console.log("Number of contact in address Book: "+num)
 }
 findNumberOfContact();
-function findContactByCityName(){
-    let pcity = "Nalanda";
-    let find = contactArray.filter((contact)=>contact.city==pcity).map(contact=>contact.toString());
+function findContactByCityOrStateName(){
+    let pcityOrState = "Bihar";
+    let find = contactArray.filter((contact)=>contact.city==pcityOrState || contact.state==pcityOrState).map(contact=>contact.toString());
     console.log(find)
 }
-findContactByCityName()
-function findContactByStateName(){
-    let pstate = "Bihar";
-    let find = contactArray.filter((contact)=>contact.state==pstate).map(contact=>contact.toString());
-    console.log(find)
+findContactByCityOrStateName()
+function countOfContactsByCityOrState()
+{
+    let pcityOrState = "Bihar";
+    let count = contactArray.filter((contact)=>contact.city==pcityOrState || contact.state==pcityOrState).reduce((contact)=>contact+1,0)
+    console.log(count)
 }
-findContactByStateName()
+countOfContactsByCityOrState();
